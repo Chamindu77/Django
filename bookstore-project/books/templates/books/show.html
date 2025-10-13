@@ -1,0 +1,139 @@
+<!-- <!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Django Course</title>
+  </head>
+
+  <body></body>
+  <section class="py-10">
+    <h1 class="text-center text-4xl">{{ book.title }}</h1>
+    <div class="flex justify-center my-4">
+    <img src="{{book.thumbnailUrl}}" />
+    </div>
+    <p>{{ book.shortDescription }}</p>
+  </section>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ book.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Inter", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+        }
+
+        .book-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .book-header img {
+            width: 200px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .book-info {
+            flex: 1;
+            min-width: 260px;
+        }
+
+        h1 {
+            margin-bottom: 16px;
+            font-size: 2em;
+            color: #111;
+        }
+
+        h2 {
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+            color: #222;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .meta {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .authors {
+            margin-top: 4px;
+            font-weight: 500;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .book-header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .book-info {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="book-header">
+            <img src="{{ book.thumbnailUrl }}" alt="{{ book.title }} cover">
+            <div class="book-info">
+                <h1>{{ book.title }}</h1>
+                <p class="meta">📅 Published: {{ book.publishedDate|date:"F j, Y" }}</p>
+                <p class="meta">📚 Total Pages: {{ book.pageCount }}</p>
+                <p class="meta">🏷️ Categories: {{ book.categories|join:", " }}</p>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>About</h2>
+        <p>{{ book.shortDescription }}</p>
+
+        <h2>Authors</h2>
+        <p class="authors">{{ book.authors|join:", " }}</p>
+
+        <h2>Description</h2>
+        <p>{{ book.longDescription }}</p>
+    </div>
+</body>
+</html>
