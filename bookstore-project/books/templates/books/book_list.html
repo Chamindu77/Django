@@ -19,7 +19,7 @@
     <h1 class="text-center text-3xl mb-10">Programming Books</h1>
 
     <div class="grid grid-cols-4 gap-4">
-    {% for book in books %}
+    {% for book in book_list %}
     <a href="/book/{{ book.id }}" class="justify-self-center text-center my-4" target="_blank">
     <div class="justify-self-center">
     <p>{{ book.title }}</p>
