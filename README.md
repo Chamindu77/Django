@@ -1,1 +1,1 @@
-# Python - Backend - Django
+# Django for backend development practice.
